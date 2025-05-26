@@ -19,3 +19,4 @@ It fetches data from CoinGecko API, calculates indicators, generates buy/sell/ho
 2. Run the main script:
    ```bash
    python main.py
+   pip install -r requirements.txt
