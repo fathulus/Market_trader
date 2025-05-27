@@ -8,7 +8,7 @@ def fetch_ohlcv(symbol='bitcoin', vs_currency='usd', days='365', interval='daily
         'days': days,
     }
 
-    # CoinGecko pozwala tylko na 'daily'
+    # Coingecko allows on 'daily'
     if interval and interval != 'daily':
         print(f" CoinGecko accepts only 'daily' like a interval. Avoid of interval='{interval}'")
     else:
@@ -27,7 +27,7 @@ def fetch_ohlcv(symbol='bitcoin', vs_currency='usd', days='365', interval='daily
         print(data)
         return pd.DataFrame()
 
-    # Konwersja do DataFrame
+    # Conversion to dataFrame
     df = pd.DataFrame(data['prices'], columns=['timestamp', 'price'])
     df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
     df.set_index('timestamp', inplace=True)
